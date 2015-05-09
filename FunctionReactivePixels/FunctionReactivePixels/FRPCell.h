@@ -12,6 +12,11 @@
 
 @interface FRPCell : UICollectionViewCell
 
-- (void)setPhotoModel:(FRPPhotoModel *)photoModel;
+/**
+ *  添加数据模型属性，用于监听里面的字段
+ */
+@property (nonatomic, strong) FRPPhotoModel *photoModel;
+
+//- (void)setPhotoModel:(FRPPhotoModel *)photoModel;
 
 @end

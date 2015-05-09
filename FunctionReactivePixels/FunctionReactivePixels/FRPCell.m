@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) UIImageView *imageView;
 
-@property (nonatomic, strong) RACDisposable *subScription;//一次性的可释放的预订者对象
+//@property (nonatomic, strong) RACDisposable *subScription;//一次性的可释放的预订者对象
 
 @end
 
@@ -31,11 +31,20 @@
         [self.contentView addSubview:imageView];
         
         self.imageView = imageView;
+        
+        //使用KVO监听photoModel的thumbnailData来绑定imageView的image
+        RAC(self.imageView, image) = [[RACObserve(self, photoModel.thumbnailData) ignore:nil] map:^id(NSData *value) {
+            return [UIImage imageWithData:value];
+        }];
+        
+        
     }
     
     return self;
 }
 
+
+/*
 - (void)setPhotoModel:(FRPPhotoModel *)photoModel
 {
     
@@ -62,5 +71,6 @@
     [self.subScription dispose];
     self.subScription = nil;
 }
+ */
 
 @end

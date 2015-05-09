@@ -57,6 +57,8 @@
     
     self.imageView = imageView;
     
+    
+//    NSLog(@"didload -=- %@", selfr);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -73,7 +75,6 @@
         [SVProgressHUD dismiss];
         
         //此时，对应的photoModel的fullsizedData就有了，这时候RAC绑定的ImageView会立即调用setImage来设置图片
-        
     }];
 }
 

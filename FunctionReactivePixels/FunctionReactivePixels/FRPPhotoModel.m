@@ -10,4 +10,9 @@
 
 @implementation FRPPhotoModel
 
+- (void)dealloc
+{
+    NSLog(@"dealloc~~~ %@", self);
+}
+
 @end

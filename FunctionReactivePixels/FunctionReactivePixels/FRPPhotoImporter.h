@@ -22,6 +22,10 @@
  *
  *  @return 包含详情图片数据的RACReplaySubject对象
  */
-+ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel;
+//+ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel;
+
+
++ (RACSignal *)fetchPhotoDetails:(FRPPhotoModel *)photoModel;
+
 
 @end

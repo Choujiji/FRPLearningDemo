@@ -17,6 +17,8 @@
 //AppDelegate
 #import "AppDelegate.h"
 
+#import <ReactiveCocoa/RACDelegateProxy.h>
+
 #define App_Delegate (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
